@@ -1,67 +1,57 @@
-Momo Transaction SMS Parser
+# Momo Transaction SMS Parser
 
- This project is a simple but useful tool we built to help people understand their mobile money (MoMo) transactions better. We all get SMS notifications for every transaction whether it’s receiving money, paying someone, withdrawing cash, or buying internet bundles. After a while, these messages pile up and it’s hard to keep track manually.
+This project is a simple but useful tool built to help users better understand and manage their Mobile Money (MoMo) transactions. In places like Rwanda, where MoMo is heavily used, users receive SMS alerts for every transaction—receiving money, sending payments, withdrawing cash, or buying bundles. These messages add up fast, making it difficult to track them manually.
 
-So, this app reads those SMS messages from a file, picks out the important details, and saves them neatly in a database. This way, you can easily check your transaction history without scrolling through tons of texts.
+## What the System Does
 
-What the System Does :
+This app reads exported SMS messages from a file, extracts key details, and saves them neatly in a local database for easy viewing. If a message can't be understood, it's logged for review so the system can be improved.
 
-The program reads an XML file called modified_sms_v2.xml that contains exported SMS messages. It goes through each message one by one and tries to figure out what kind of transaction it is.
-For each message, it tries to get:
+It performs the following tasks:
+- Identifies the **type of transaction** (e.g. payment, withdrawal, money received)
+- Extracts the **amount**, **date**, and **participants** involved
+- Saves valid data to a **SQLite database**
+- Logs unrecognized messages in a separate file for debugging
 
-  1.What type of transaction it is (payment, money received, withdrawal, etc.)
-  2.The amount involved
-  3.The date the transaction happened
-  4.Who sent or received the money
-  5.If the message is recognized, it saves all that info into a database file called momo.db. If it can’t understand the message, it saves it in a log file called ignored.log so I can check and improve the system later.
-
-Why This Project Matters :
-
- .Mobile money is a big deal, especially in Rwanda and many other places. But keeping track of all those SMS messages by hand is tough. This project automates the process, making it way easier to search, organize, and understand your 
-  transactions.
-
-Technologies Used :
-
-  1.JavaScript (Node.js) for processing the SMS messages
-  2.SQLite to save the transactions locally in a small database
-  3.XML2JS, a Node.js library that converts the XML SMS file into a format the program can read
-
-Project Structure:
+## Project Structure
 momo-analysis/
 ├── Backend/
-│ ├── processMomoData.js # Parses XML & inserts transactions into SQLite
-│ ├── Server.js # Node.js server that exposes API endpoints
-│ ├── modified_sms_v2.xml # SMS backup file in XML format
-│ ├── ignored.log # Messages that didn't match known patterns
-│ └── tempCodeRunnerFile.js # Temporary file (optional)
+│ ├── processMomoData.js # Parses XML and inserts transactions into the database
+│ ├── Server.js # Node.js server for API access
+│ ├── modified_sms_v2.xml # Exported SMS messages in XML format
+│ ├── ignored.log # Logs of unrecognized messages
 ├── Database/
-│ ├── momo.db # SQLite database file
-│ └── Schema.sql # SQL schema for the transactions table
+│ ├── momo.db # SQLite database storing parsed transactions
+│ └── Schema.sql # SQL schema for the database
 ├── Frontend/
-│ ├── Index.html # Web-based dashboard UI
-│ ├── Dashboard.js # Frontend logic to fetch & render transactions
-│ └── style.css # Basic styles for the dashboard
+│ ├── index.html # Web dashboard to view transactions
+│ ├── Dashboard.js # JavaScript logic for fetching and rendering data
+│ └── style.css # Basic UI styling
 ├── package.json # Project dependencies
-├── package-lock.json # Lock file for consistent installations
+├── package-lock.json # Lock file for consistent installs
 
-How to Run the System :
+## Technologies Used
 
-  1.Make sure you have Node.js installed on your computer.
-  2.Install the needed packages by running:
-  3.npm install xml2js sqlite3
-  4.Put your SMS export XML file in the project folder and rename it to modified_sms_v2.xml.
-  5.Run the program using this command:
-      .node Backend/processMomoData.js
+- **Node.js** – for backend logic and file processing
+- **SQLite** – lightweight local database
+- **xml2js** – Node.js library for converting XML to JavaScript objects
+- **HTML/CSS/JS** – for building the dashboard interface
 
-When it’s done, you open the Database/momo.db file with a tool like DB Browser for SQLite to see your transactions.
+##  How to Run the System
 
-video link : https://www.awesomescreenshot.com/video/41024162?key=fe16e270421e99ab6cddd6b127d9965c
-Summative Report :https://docs.google.com/document/d/1Tutie5QXrz96GwMzCEbssANKIWGMtv0-FG3jfbM2rfk/edit?tab=t.0#heading=h.38onzmn50cpv
+1. **Install Node.js** on your machine.
+2. Clone or download this repository.
+3. Install the necessary packages:
+   ```bash
+   npm install xml2js sqlite3
 
-AUTHORS
+## Live Demo & Resources
+[Watch a video demo here!]( https://www.awesomescreenshot.com/video/41024162?key=fe16e270421e99ab6cddd6b127d9965c/)
+ [Summative Report here!](https://docs.google.com/document/d/1Tutie5QXrz96GwMzCEbssANKIWGMtv0-FG3jfbM2rfk/edit?tab=t.0#heading=h.38onzmn50cpv/)
 
-1.Mukeshimana Josiane
+## Authors
+Mukeshimana Josiane
 
-2.Ntwali Ishimwe Christian
-3.Prudence Tracey Browns
+Ntwali Ishimwe Christian
+
+Prudence Tracey Browns
 

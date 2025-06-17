@@ -1,5 +1,4 @@
-/* Reset some basics */
-* {
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -10,11 +9,10 @@ body.container {
   max-width: 960px;
   margin: 1.5rem auto;
   padding: 0 1rem;
-  background-color: #f9fafb;
+  background-color: #fcdeea;
   color: #333;
 }
 
-/* Header */
 .header {
   text-align: center;
   margin-bottom: 2rem;
@@ -30,7 +28,6 @@ body.container {
   color: #6b7280;
 }
 
-/* Upload section */
 .upload-section {
   background: #e0f2fe;
   border-radius: 0.5rem;
@@ -51,6 +48,17 @@ body.container {
 }
 .upload-box:hover {
   background-color: #bae6fd;
+}
+.uploadBtn {
+  background-color: #0369a1;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 0.5rem;
+  font-weight: 600;
 }
 .upload-box i.material-icons {
   font-size: 48px;
@@ -84,6 +92,12 @@ body.container {
   border-radius: 0.5rem;
   color: white;
   box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .card p {
   font-weight: 600;
@@ -149,7 +163,6 @@ body.container {
   box-shadow: 0 0 3px #3b82f6;
 }
 
-/* Charts */
 .charts {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -157,10 +170,16 @@ body.container {
   margin-bottom: 2rem;
 }
 .chart-box {
-  background: white;
+  background: paleturquoise;
   border-radius: 0.5rem;
   padding: 1rem 1.5rem;
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.chart-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .chart-box h2 {
   display: flex;
@@ -177,7 +196,7 @@ body.container {
 }
 
 .chart-full {
-  background: white;
+  background: rgb(247, 131, 247);
   border-radius: 0.5rem;
   padding: 1rem 1.5rem;
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
@@ -258,7 +277,6 @@ body.container {
   font-weight: 700;
 }
 
-/* Buttons */
 button {
   background-color: #3b82f6;
   color: white;
