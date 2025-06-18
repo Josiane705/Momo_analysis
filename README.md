@@ -46,7 +46,8 @@ momo-analysis/
 
 ## Live Demo & Resources
 [Watch a video demo here!]( https://www.awesomescreenshot.com/video/41024162?key=fe16e270421e99ab6cddd6b127d9965c/)
- [Summative Report here!](https://docs.google.com/document/d/1Tutie5QXrz96GwMzCEbssANKIWGMtv0-FG3jfbM2rfk/edit?tab=t.0#heading=h.38onzmn50cpv/)
+
+ [View Our Summative Report here!](https://docs.google.com/document/d/1Tutie5QXrz96GwMzCEbssANKIWGMtv0-FG3jfbM2rfk/edit?tab=t.0#heading=h.38onzmn50cpv/)
 
 ## Authors
 Mukeshimana Josiane

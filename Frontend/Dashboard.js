@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         transaction.receiver = "Self";
         transaction.date = body.match(/at\s(\d{4}-\d{2}-\d{2}.*?)\./)?.[1] || "";
       } else {
-        return null; // Ignore unrelated messages
+        return null;
       }
 
       return transaction;
@@ -87,15 +87,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const typeCounts = {};
     const monthlySums = {};
     transactions.forEach((tx) => {
-      // Count by type
+
       typeCounts[tx.type] = (typeCounts[tx.type] || 0) + 1;
 
-      // Monthly aggregation
-      const month = tx.date.slice(0, 7); // YYYY-MM
+
+      const month = tx.date.slice(0, 7);
       monthlySums[month] = (monthlySums[month] || 0) + tx.amount;
     });
 
-    // Pie Chart
     new Chart(document.getElementById("pieChart"), {
       type: "pie",
       data: {
@@ -108,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Bar Chart
     new Chart(document.getElementById("barChart"), {
       type: "bar",
       data: {
@@ -121,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Line Chart
     new Chart(document.getElementById("lineChart"), {
       type: "line",
       data: {

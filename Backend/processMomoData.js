@@ -3,21 +3,17 @@ const path = require('path');
 const xml2js = require('xml2js');
 const sqlite3 = require('sqlite3').verbose();
 
-// Paths
 const XML_FILE = path.join(__dirname, 'modified_sms_v2.xml');
 const DB_FILE = path.join(__dirname, '..', 'Database', 'momo.db');
 const IGNORED_LOG = path.join(__dirname, 'ignored.log');
 
-// File check
 if (!fs.existsSync(XML_FILE)) {
   console.error(`❌ XML file not found at ${XML_FILE}`);
   process.exit(1);
 }
 
-// Open DB
 const db = new sqlite3.Database(DB_FILE);
 
-// Ensure table exists
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS transactions (
@@ -32,7 +28,6 @@ db.serialize(() => {
   `);
 });
 
-// Read and parse XML
 const xml = fs.readFileSync(XML_FILE, 'utf-8');
 
 xml2js.parseString(xml, (err, result) => {
@@ -103,7 +98,6 @@ xml2js.parseString(xml, (err, result) => {
     }
   });
 
-  // Save ignored messages
   fs.writeFileSync(IGNORED_LOG, ignored.join('\n'), 'utf-8');
   console.log(`✅ Done. Inserted messages into DB.`);
   console.log(`⚠️ Ignored messages: ${ignored.length}`);

@@ -80,7 +80,6 @@ body.container {
   font-style: italic;
 }
 
-/* Stats cards */
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -126,7 +125,6 @@ body.container {
   background-color: #f97316;
 }
 
-/* Filters */
 .filters {
   margin-bottom: 2rem;
 }
@@ -216,7 +214,6 @@ body.container {
   color: #10b981;
 }
 
-/* Transactions */
 .transactions {
   background: white;
   border-radius: 0.5rem;
