@@ -15,10 +15,15 @@ It performs the following tasks:
 ## Project Structure
 momo-analysis/
 ├── Backend/
+
 │ ├── processMomoData.js # Parses XML and inserts transactions into the database
+
 │ ├── Server.js # Node.js server for API access
+
 │ ├── modified_sms_v2.xml # Exported SMS messages in XML format
+
 │ ├── ignored.log # Logs of unrecognized messages
+
 ├── Database/
 │ ├── momo.db # SQLite database storing parsed transactions
 │ └── Schema.sql # SQL schema for the database
