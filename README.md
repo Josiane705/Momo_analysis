@@ -45,9 +45,9 @@ momo-analysis/
    npm install xml2js sqlite3
 
 ## Live Demo & Resources
-[Watch a video demo here!]( https://www.awesomescreenshot.com/video/41024162?key=fe16e270421e99ab6cddd6b127d9965c/)
+[Click here to watch a video demo!]( https://www.awesomescreenshot.com/video/41024162?key=fe16e270421e99ab6cddd6b127d9965c/)
 
- [View Our Summative Report here!](https://docs.google.com/document/d/1Tutie5QXrz96GwMzCEbssANKIWGMtv0-FG3jfbM2rfk/edit?tab=t.0#heading=h.38onzmn50cpv/)
+ [Click here to view our Summative Report!](https://docs.google.com/document/d/1Tutie5QXrz96GwMzCEbssANKIWGMtv0-FG3jfbM2rfk/edit?tab=t.0#heading=h.38onzmn50cpv/)
 
 ## Authors
 Mukeshimana Josiane
