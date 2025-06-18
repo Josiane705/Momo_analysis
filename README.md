@@ -14,25 +14,22 @@ It performs the following tasks:
 
 ## Project Structure
 momo-analysis/
-├── Backend/
-
-│ ├── processMomoData.js # Parses XML and inserts transactions into the database
-
-│ ├── Server.js # Node.js server for API access
-
-│ ├── modified_sms_v2.xml # Exported SMS messages in XML format
-
-│ ├── ignored.log # Logs of unrecognized messages
-
-├── Database/
-│ ├── momo.db # SQLite database storing parsed transactions
-│ └── Schema.sql # SQL schema for the database
-├── Frontend/
-│ ├── index.html # Web dashboard to view transactions
-│ ├── Dashboard.js # JavaScript logic for fetching and rendering data
-│ └── style.css # Basic UI styling
-├── package.json # Project dependencies
-├── package-lock.json # Lock file for consistent installs
+ ├── Backend/
+ │ ├── processMomoData.js # Parses XML and inserts transactions into the database
+ │ ├── Server.js # Node.js server for API access
+ │ ├── modified_sms_v2.xml # Exported SMS messages in XML format
+ │ ├── ignored.log # Logs of unrecognized messages
+ 
+ ├── Database/
+   ├── momo.db # SQLite database storing parsed transactions
+   └── Schema.sql # SQL schema for the database
+   
+ ├── Frontend/
+   ├── index.html # Web dashboard to view transactions
+   ├── Dashboard.js # JavaScript logic for fetching and rendering data
+   └── style.css # Basic UI styling
+   ├── package.json # Project dependencies
+   ├── package-lock.json # Lock file for consistent installs
 
 ## Technologies Used
 
